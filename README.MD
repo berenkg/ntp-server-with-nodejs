@@ -20,3 +20,10 @@ ntpClient.getNetworkTime("0.tr.pool.ntp.org", 123, function(err, date) {
     console.log(tarih.getSeconds());
 });
 ```
+Sistem saatini değiştirmek için ise aşağıdaki komutlar kullanılır
+```js
+// npm i shelljs
+var shell = require('shelljs');
+shell.exec("timedatectl set-ntp false");
+shell.exec("date -s '12:12:12'");
+```
